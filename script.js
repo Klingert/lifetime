@@ -34,6 +34,29 @@ function berechneTage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Werte aus localStorage laden, falls vorhanden, sonst aus config.js
+    const config = window.appConfig || {};
+    const savedDate = localStorage.getItem('dateInput');
+    const savedYears = localStorage.getItem('yearsInput');
+
+    if (savedDate) {
+        document.getElementById('dateInput').value = savedDate;
+    } else if (config.defaultDate) {
+        document.getElementById('dateInput').value = config.defaultDate;
+    }
+
+    if (savedYears !== null) {
+        document.getElementById('yearsInput').value = savedYears;
+    } else if (config.defaultYears) {
+        document.getElementById('yearsInput').value = config.defaultYears;
+    }
+
+    // Beim Schließen speichern
+    window.addEventListener('beforeunload', () => {
+        localStorage.setItem('dateInput', document.getElementById('dateInput').value);
+        localStorage.setItem('yearsInput', document.getElementById('yearsInput').value);
+    });
+
     berechneTage();
     document.getElementById('dateInput').addEventListener('input', berechneTage);
     document.getElementById('yearsInput').addEventListener('input', berechneTage);

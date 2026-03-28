@@ -1,0 +1,4 @@
+window.appConfig = {
+    defaultDate: "1979-01-23",
+    defaultYears: 94
+};
