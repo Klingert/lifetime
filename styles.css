@@ -14,13 +14,35 @@ body {
     position: relative;
 }
 
-.date-input-container {
+.toggle-wrapper {
     position: absolute;
     top: 20px;
     right: 20px;
     display: flex;
+    align-items: center;
+}
+
+.toggle-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    margin-left: 4px;
+    color: #333;
+}
+
+.input-fields {
+    display: flex;
     flex-direction: column;
     gap: 8px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-wrapper.collapsed .input-fields {
+    transform: translateX(120%);
 }
 
 .date-input, .years-input {

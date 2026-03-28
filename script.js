@@ -34,6 +34,27 @@ function berechneTage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const toggleWrapper = document.getElementById('toggleWrapper');
+    const toggleButton = document.getElementById('toggleButton');
+
+    // Toggle-Zustand aus localStorage laden
+    const isCollapsed = localStorage.getItem('inputsCollapsed') === 'true';
+    if (isCollapsed) {
+        toggleWrapper.classList.add('collapsed');
+        toggleButton.textContent = '▶';
+    } else {
+        toggleWrapper.classList.remove('collapsed');
+        toggleButton.textContent = '◀';
+    }
+
+    // Toggle-Button Klick-Handler
+    toggleButton.addEventListener('click', () => {
+        toggleWrapper.classList.toggle('collapsed');
+        const collapsed = toggleWrapper.classList.contains('collapsed');
+        toggleButton.textContent = collapsed ? '▶' : '◀';
+        localStorage.setItem('inputsCollapsed', collapsed);
+    });
+
     // Werte aus localStorage laden, falls vorhanden, sonst aus config.js
     const config = window.appConfig || {};
     const savedDate = localStorage.getItem('dateInput');
