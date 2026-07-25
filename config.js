@@ -1,4 +1,4 @@
 window.appConfig = {
-    defaultDate: "1979-01-23",
-    defaultYears: 94
+    defaultDate: "2000-01-01",
+    defaultYears: 80
 };
