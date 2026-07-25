@@ -67,7 +67,7 @@ body {
 }
 
 .number {
-    font-size: clamp(3rem, 25vw, 12.5rem);
+    font-size: clamp(2.5rem, 8vw, 12.5rem);
     font-weight: bold;
     color: #333;
     text-align: center;
@@ -105,12 +105,12 @@ body {
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .number {
-        font-size: clamp(5rem, 18vw, 10rem);
+        font-size: clamp(4rem, 12vw, 10rem);
     }
 }
 
 @media (min-width: 1025px) {
     .number {
-        font-size: clamp(8rem, 15vw, 12.5rem);
+        font-size: clamp(6rem, 14vw, 12.5rem);
     }
 }
