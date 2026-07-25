@@ -41,17 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const isCollapsed = localStorage.getItem('inputsCollapsed') === 'true';
     if (isCollapsed) {
         toggleWrapper.classList.add('collapsed');
-        toggleButton.textContent = '▶';
+        toggleButton.textContent = '◀';
     } else {
         toggleWrapper.classList.remove('collapsed');
-        toggleButton.textContent = '◀';
+        toggleButton.textContent = '▶';
     }
 
     // Toggle-Button Klick-Handler
     toggleButton.addEventListener('click', () => {
         toggleWrapper.classList.toggle('collapsed');
         const collapsed = toggleWrapper.classList.contains('collapsed');
-        toggleButton.textContent = collapsed ? '▶' : '◀';
+        toggleButton.textContent = collapsed ? '◀' : '▶';
         localStorage.setItem('inputsCollapsed', collapsed);
     });
 
