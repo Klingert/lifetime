@@ -1,17 +1,17 @@
 # Lifetime
 
-Eine einfache Web-Anwendung, die die verbleibenden Tage bis zu einem Ziel berechnet.
+A simple web app that calculates the remaining days until a target date.
 
-## Funktionsweise
+## How It Works
 
-1. Ein Startdatum eingeben
-2. Eine Anzahl an Jahren angeben
-3. Das Ziel wird automatisch berechnet (Startdatum + Jahre)
-4. Die verbleibenden Tage bis zum Ziel werden angezeigt
+1. Enter a start date
+2. Enter a number of years
+3. The target is automatically calculated (start date + years)
+4. The remaining days until the target are displayed
 
-## Konfiguration
+## Configuration
 
-Standardwerte können in `config.js` angepasst werden:
+Default values can be customized in `config.js`:
 
 ```js
 window.appConfig = {
@@ -20,8 +20,8 @@ window.appConfig = {
 };
 ```
 
-## Nutzung
+## Usage
 
-`index.html` im Browser öffnen. Kein Server erforderlich.
+Open `index.html` in a browser. No server required.
 
-Eingaben und Zustand werden automatisch im Browser (localStorage) gespeichert.
+Inputs and state are automatically saved in the browser (localStorage).
