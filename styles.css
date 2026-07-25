@@ -12,6 +12,7 @@ body {
     background-color: #f5f5f5;
     font-family: Arial, sans-serif;
     position: relative;
+    overflow-x: hidden;
 }
 
 .toggle-wrapper {
@@ -20,7 +21,7 @@ body {
     right: 20px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: clamp(6px, 1vw, 12px);
 }
 
 .toggle-button {
@@ -28,11 +29,12 @@ body {
     background: none;
     border: 1px solid #999;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
     line-height: 1;
     padding: 4px 8px;
     color: #333;
     transition: background-color 0.2s;
+    flex-shrink: 0;
 }
 
 .toggle-button:hover {
@@ -43,7 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    width: 150px;
+    width: clamp(120px, 20vw, 150px);
     overflow: hidden;
     transition: width 0.3s ease;
 }
@@ -56,16 +58,59 @@ body {
 
 .date-input, .years-input {
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: white;
     width: 100%;
+    min-width: 0;
 }
 
 .number {
-    font-size: 200px;
+    font-size: clamp(3rem, 25vw, 12.5rem);
     font-weight: bold;
     color: #333;
     text-align: center;
+    width: 100%;
+    padding: 0 clamp(0.5rem, 2vw, 1rem);
+    word-break: break-word;
+}
+
+@media (max-width: 480px) {
+    .toggle-wrapper {
+        top: 12px;
+        right: 12px;
+        gap: 6px;
+    }
+
+    .toggle-button {
+        padding: 6px 10px;
+    }
+
+    .input-fields {
+        width: clamp(100px, 30vw, 140px);
+        gap: 6px;
+    }
+
+    .date-input, .years-input {
+        padding: 6px 8px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .input-fields {
+        width: clamp(130px, 22vw, 150px);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .number {
+        font-size: clamp(5rem, 18vw, 10rem);
+    }
+}
+
+@media (min-width: 1025px) {
+    .number {
+        font-size: clamp(8rem, 15vw, 12.5rem);
+    }
 }
